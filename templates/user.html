@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Hi, {{current_user.username}}! you're logged in</h1><br>
+</head>
+<style>
+    table {
+       border:1px solid black;
+       padding: 10px;
+    }
+    th, td{
+       border:1px solid black;
+       padding: 20px;
+    }
+ </style>
+<body>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Delete</th>
+        </tr>
+        {% for vehicle in my_vehicles %}
+        <tr>
+            <td>{{ vehicle.id }}</td>
+            <td>{{ vehicle.brand }}</td>
+            <td>{{ vehicle.model }}</td>
+            <td><a href="{{url_for('delete_vehicle', username = current_user.username, vehicle_id = vehicle.id)}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table> <br>
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <p>
+            {{form.brand(size=32, placeholder='Type Vehicle Brand')}}
+            {% for errors in form.brand.errors %}
+            <span style="color: red;">[{{errors}}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.model(size=32, placeholder='Type Vehicle Model')}}
+            {% for errors in form.model.errors %}
+            <span style="color: red;">[{{errors}}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.submit}}
+        </p>        
+    </form><br>
+
+    <p><a href="{{url_for('logout')}}">Log Out</a></p>
+
+</body>
+</html>
