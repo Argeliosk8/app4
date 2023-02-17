@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_required, login_user
 from os import environ
@@ -15,6 +15,6 @@ db = SQLAlchemy(app)
 @app.route('/home')
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return redirect(url_for('login'))
 
 import routes

@@ -5,33 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <h1 style="color: red;">Sign In</h1>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/login.css')}}" />
 </head>
 <body>
-    <p>New User?<a href="{{url_for('register')}}"> Click to Register</a></p><br>
-    <form action="{{url_for('login')}}" method="post">
-        {{ form.hidden_tag() }}
-        {{ form.csrf_token }}
-        <p>
-            {{form.email.label(size=32)}}<br>
-            {{form.email(size=32, placeholder='email@sample.com')}}<br>
-            {% for errors in form.email.errors %}
-            <span style="color: red;">[{{errors}}]</span>
-            {% endfor %}
-        </p>
-        <P>
-            {{form.password.label(size=32)}}<br>
-            {{form.password(size=32, placeholder='p@$$w0rd_here')}}<br>
-            {% for errors in form.password.errors %}
-            <span style="color: red;">[{{errors}}]]</span>
-            {% endfor %}
-        </P>
-        <p>
-            {{form.remember()}} {{form.remember.label}}
-        </p>
-        <p>
-            {{form.submit}}
-        </p>
-    </form>    
+<div class="container">
+    <div class="login_box">
+        <div class="login_content">
+            <h1>Sign In</h1>
+            <p>New User?&nbsp;<a href="{{url_for('register')}}">Click to Register</a></p>         
+            <form class="login" action="{{url_for('login')}}" method="post">
+                {{ form.hidden_tag() }}
+                {{ form.csrf_token }}
+                {{form.email.label(size=32)}} <br><br>
+                {{form.email(size=32, placeholder='email@sample.com')}}<br><br>
+                {% for errors in form.email.errors %}
+                    <span style="color: red;">[{{errors}}]</span>
+                {% endfor %}            
+                {{form.password.label(size=32)}}<br><br>
+                {{form.password(size=32, placeholder='p@$$w0rd_here')}}<br><br>
+                {% for errors in form.password.errors %}
+                    <span style="color: red;">[{{errors}}]]</span>
+                {% endfor %}       
+                {{form.remember()}} {{form.remember.label}} <br><br>                
+                {{form.submit}}          
+            </form>
+            <h4 class="signature">Developed by Argelio Baca</h4>
+        </div>
+        </div> 
+    </div>
 </body>
 </html>

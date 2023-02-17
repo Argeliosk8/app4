@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Work+Sans:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Merriweather:ital@0;1&family=Work+Sans:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+* {
+	font-family: 'Abril Fatface', cursive;
+	font-family: 'Merriweather', serif;
+	font-family: 'Work Sans', sans-serif;
+}
+
+html, body {
+	background: #142d4c;
+	height: 100%;
+	width: 100%;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #142d4c;
+	height: 100%;
+	width: 100%;
+}
+
+.login_box {
+	height: 500px;
+	width: 400px;
+	background-color: #00aaa0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5%;	
+}
+
+.login_content {
+	text-align: center;
+	width: 95%;
+	height: 95%;
+}
+
+.signature {
+	font-family: 'Dancing Script', cursive;
+	text-align: right;
+	margin-top: 100px;
+	margin-right: 20px;
+}
