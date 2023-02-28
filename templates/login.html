@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gas Tracker System</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/login.css')}}" />
 </head>
 <body>
 <div class="container">
-    <div class="login_box">
-        <div class="login_content">
+    <div class="top_banner">        
+        <h1>Welcome to the gas tracker system</h1>              
+    </div>
+    <div class="nav">
+        <div class="option">
+            <a href="{{url_for('register')}}">Register Here</a>
+        </div> 
+        <div class="option">
+            <p><a href="{{url_for('register')}}">Register Again</a></p>
+        </div>       
+    </div>
+    <div class="login_box">    
             <h1>Sign In</h1>
             <p>New User?&nbsp;<a href="{{url_for('register')}}">Click to Register</a></p>         
             <form class="login" action="{{url_for('login')}}" method="post">
@@ -30,7 +40,6 @@
                 {{form.submit}}          
             </form>
             <h4 class="signature">Developed by Argelio Baca</h4>
-        </div>
         </div> 
     </div>
 </body>

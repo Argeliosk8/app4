@@ -7,6 +7,7 @@
 	font-family: 'Abril Fatface', cursive;
 	font-family: 'Merriweather', serif;
 	font-family: 'Work Sans', sans-serif;
+	text-align: center;
 }
 
 html, body {
@@ -15,23 +16,55 @@ html, body {
 	width: 100%;
 }
 
+.top_banner {
+	height: 75px;
+	text-align: center;
+	width: 100%;
+	background-color: #00aaa0;
+}
+
+.nav {
+	height: 100px;
+	display: inline-flex;
+	width: 100%;
+	background-color: #00aaa0;
+	align-items: center;
+	justify-content: center;
+
+	
+}
+
+.option {
+	height: 100%;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
 .container {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	background: #142d4c;
 	height: 100%;
 	width: 100%;
+	flex-shrink: 2;
+	flex-wrap: wrap;
 }
 
 .login_box {
-	height: 500px;
-	width: 400px;
 	background-color: #00aaa0;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 5%;	
+	text-align: center;
+	flex-basis: 400px;
+	flex-wrap: wrap;
+	flex-shrink: 2;
+
 }
 
 .login_content {
@@ -43,6 +76,11 @@ html, body {
 .signature {
 	font-family: 'Dancing Script', cursive;
 	text-align: right;
-	margin-top: 100px;
-	margin-right: 20px;
+	margin-top: 75px;
+	margin-right: 25px;
 }
+
+.nav :hover {
+	background-color: aqua;
+}
+
